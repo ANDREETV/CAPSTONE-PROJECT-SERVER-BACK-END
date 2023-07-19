@@ -6,6 +6,10 @@ const ordersModel = require('../models/OrderProducts');
 
 const jwtTableKey = process.env.T;
 
+routers.get('/', (req, res) => {
+  res.send('Orders!');
+});
+
 // GET to get an order
 
 routers.get('/orders', async (req, res) => {
