@@ -12,7 +12,7 @@ app.use(cors());
 const corsOptions = {
   origin: 'https://handre-restaurant.vercel.app/',
 };
-server.use(cors(corsOptions));
+app.use(cors(corsOptions));
 app.use(express.json());
 const debug = require('./middlewares/debugServer');
 app.use(debug.logUrl);
