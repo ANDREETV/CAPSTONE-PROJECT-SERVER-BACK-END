@@ -9,19 +9,15 @@ const port = process.env.PORT || 5000;
 
 // Middlewares start
 app.use(cors());
-const corsOptions = {
-  origin: 'https://handre-restaurant.vercel.app/',
-};
-app.use(cors(corsOptions));
+// const corsOptions = {
+//   origin: 'https://handre-restaurant.vercel.app/',
+// };
+// app.use(cors(corsOptions));
 app.use(express.json());
 const debug = require('./middlewares/debugServer');
 app.use(debug.logUrl);
 
 // Endpoint
-// Aggiungi questa rotta alla fine del tuo file `index.js`
-app.get('/', (req, res) => {
-  res.send('Benvenuto al tuo server Express!');
-});
 
 const ProductsEndpoint = require('./endpoints/ProductsEndPoints');
 app.use(ProductsEndpoint);
